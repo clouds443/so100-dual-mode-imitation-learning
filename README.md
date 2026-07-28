@@ -67,7 +67,7 @@ torchvision==0.21.0
 
 注意：本项目的视频读取流程依赖 `torchvision.io.VideoReader`，请避免安装 `torchvision>=0.22`。
 
-## 只有从臂的完整流程
+## 只有从臂的完整流程（手拖时手会进入画面，在一定程度上影响视觉模仿学习效果。）
 云服务器训练演示：
 
 <img width="1814" height="855" alt="屏幕截图 2026-07-28 074028" src="https://github.com/user-attachments/assets/806154fe-c03b-42e9-9081-c7f5770050b4" />
