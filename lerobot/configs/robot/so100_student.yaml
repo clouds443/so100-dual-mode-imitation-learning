@@ -1,0 +1,37 @@
+# SO100 student-only arm for kinesthetic teaching.
+#
+# Use this configuration when you only have the follower/student arm.
+# Demonstrations are collected by disabling follower torque and hand-guiding the arm.
+
+_target_: lerobot.common.robot_devices.robots.manipulator.ManipulatorRobot
+robot_type: so100
+calibration_dir: .cache/calibration/so100
+
+# Keep policy control conservative when replaying or evaluating a trained model.
+max_relative_target: 5
+
+follower_arms:
+  main:
+    _target_: lerobot.common.robot_devices.motors.feetech.FeetechMotorsBus
+    port: com5
+    motors:
+      shoulder_pan: [1, "sts3215"]
+      shoulder_lift: [2, "sts3215"]
+      elbow_flex: [3, "sts3215"]
+      wrist_flex: [4, "sts3215"]
+      wrist_roll: [5, "sts3215"]
+      gripper: [6, "sts3215"]
+
+cameras:
+  laptop:
+    _target_: lerobot.common.robot_devices.cameras.opencv.OpenCVCamera
+    camera_index: 0
+    fps: 30
+    width: 640
+    height: 480
+  phone:
+    _target_: lerobot.common.robot_devices.cameras.opencv.OpenCVCamera
+    camera_index: 1
+    fps: 30
+    width: 640
+    height: 480
